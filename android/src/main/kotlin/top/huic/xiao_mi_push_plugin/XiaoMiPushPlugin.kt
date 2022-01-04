@@ -46,14 +46,14 @@ public class XiaoMiPushPlugin : FlutterPlugin, MethodCallHandler, ActivityAware 
 
         // 动态申请电话和存储权限
         // 引用小米官方SDK: `在非MIUI平台下，如果targetSdkVersion>=23，需要动态申请电话和存储权限，请在申请权限后再调用注册接口，否则会注册失败。`
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-            if (ActivityCompat.checkSelfPermission(this.context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this.activity, Array(2) {
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-                    Manifest.permission.READ_PHONE_STATE
-                }, 1)
-            }
-        }
+//         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+//             if (ActivityCompat.checkSelfPermission(this.context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//                 ActivityCompat.requestPermissions(this.activity, Array(2) {
+//                     Manifest.permission.WRITE_EXTERNAL_STORAGE
+//                     Manifest.permission.READ_PHONE_STATE
+//                 }, 1)
+//             }
+//         }
     }
 
     override fun onDetachedFromActivity() {
